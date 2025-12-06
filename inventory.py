@@ -22,3 +22,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+def prompt_add_song():
+    """Hàm tương tác với user để thêm bài (gọi add_song)."""
+    print("\n--- THÊM BÀI HÁT ---")
+    title = input("Tên bài hát: ").strip()
+    artist = input("Ca sĩ: ").strip()
+    duration = input("Thời lượng (giây): ").strip()
+    try:
+        song = add_song(title, artist, duration)
+        print(f"Đã thêm: {song['title']} - {song['artist']} ({song['duration']}s)")
+    except ValueError as e:
+        print("Lỗi khi thêm bài:", e)
